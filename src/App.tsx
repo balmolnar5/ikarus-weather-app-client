@@ -5,7 +5,9 @@ import "./App.css";
 import axios from "axios";
 
 // TODO: remove this
-void axios.get("http://localhost:8000/api/weather/current?location=London").then(console.log);
+void axios
+  .get(`${import.meta.env.VITE_API_BASE_URL}/weather/current?location=Vienna`)
+  .then(console.log);
 
 function App() {
   const [count, setCount] = useState(0);
