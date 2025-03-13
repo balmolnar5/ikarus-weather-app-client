@@ -22,12 +22,12 @@
     "npm": "10.9.2"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "2.6.1",
     "axios": "1.8.3",
     "baseui": "15.0.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "redux": "5.0.1",
-    "redux-thunk": "3.1.0",
+    "react-redux": "9.2.0",
     "styletron-engine-monolithic": "1.0.0",
     "styletron-react": "6.1.1"
   },
