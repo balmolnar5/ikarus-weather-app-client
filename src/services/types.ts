@@ -19,8 +19,8 @@ export interface CurrentWeather {
   temp_c: number;
   temp_f: number;
   is_day: boolean;
-  wind_mph: number;
-  wind_kph: number;
+  wind_speed_mph: number;
+  wind_speed_kph: number;
   wind_degree: number;
   wind_dir: string;
   humidity: number;
