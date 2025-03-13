@@ -2,11 +2,9 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { apiClient } from "./services/api";
+import { weatherService } from "./services/weatherService";
 
-void apiClient.get("/weather/current?location=Vienna").then((res) => {
-  console.log(res);
-});
+void weatherService.getCurrentWeather("Vienna").then(console.log);
 
 function App() {
   const [count, setCount] = useState(0);
