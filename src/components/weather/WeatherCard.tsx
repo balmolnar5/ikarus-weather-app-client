@@ -34,7 +34,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 
   return (
     <SimpleCard title={title} footer={footer}>
-      <FlexGrid flexGridColumnCount={2} flexGridColumnGap="scale800">
+      <FlexGrid flexGridColumnCount={2}>
         <FlexGridItem>
           <img
             src={currentWeatherResponse.current_weather.condition.icon}
@@ -58,7 +58,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
             Humidity: {currentWeatherResponse.current_weather.humidity}%
           </ParagraphMedium>
           <ParagraphMedium>
-            Wind: {currentWeatherResponse.current_weather.wind_kph} km/h
+            Wind: {currentWeatherResponse.current_weather.wind_speed_kph} km/h
           </ParagraphMedium>
         </FlexGridItem>
       </FlexGrid>

@@ -1,4 +1,3 @@
-import "./App.css";
 import { styled } from "baseui";
 import WeatherDashboard from "./containers/WeatherDashboard";
 
@@ -9,8 +8,9 @@ const Centered = styled("div", {
 });
 
 const Container = styled("div", {
+  display: "flex",
+  justifyContent: "center",
   width: "100%",
-  maxWidth: "800px",
 });
 
 function App() {

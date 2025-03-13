@@ -1,41 +1,44 @@
 import React, { useEffect } from "react";
-import { HeadingLarge, HeadingMedium } from "baseui/typography";
-import { Spinner } from "baseui/spinner";
+import { HeadingLarge, HeadingSmall } from "baseui/typography";
 
-// import LocationSearch from "../components/weather/LocationSearch";
+import LocationSearch from "../components/weather/LocationSearch";
 import WeatherCard from "../components/weather/WeatherCard";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { fetchWeather } from "../redux/weather/weatherSlice";
+import { styled } from "baseui";
+
+const Container = styled("div", () => ({
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  maxWidth: "25rem",
+}));
 
 const WeatherDashboard: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { currentWeatherResponse, savedLocations, loading, error } = useAppSelector(
-    (state) => state.weather,
-  );
+  const { currentWeatherResponse, loading } = useAppSelector((state) => state.weather);
 
   useEffect(() => {
     dispatch(fetchWeather("Vienna"));
   }, [dispatch]);
 
-  // const handleSearch = (location: string) => {
-  //   dispatch(fetchWeather(location));
-  // };
+  const handleSearch = (location: string) => {
+    dispatch(fetchWeather(location));
+  };
 
   return (
-    <div>
+    <Container>
       <HeadingLarge>Weather App</HeadingLarge>
 
-      {/* <LocationSearch onSearch={handleSearch} isLoading={loading} /> */}
-
-      {loading && <Spinner />}
+      <LocationSearch onSearch={handleSearch} isLoading={loading} />
 
       {currentWeatherResponse && (
         <>
-          <HeadingMedium>Current Weather</HeadingMedium>
+          <HeadingSmall>Current Weather</HeadingSmall>
           <WeatherCard currentWeatherResponse={currentWeatherResponse} />
         </>
       )}
-    </div>
+    </Container>
   );
 };
 
