@@ -2,12 +2,11 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import axios from "axios";
+import { apiClient } from "./services/api";
 
-// TODO: remove this
-void axios
-  .get(`${import.meta.env.VITE_API_BASE_URL}/weather/current?location=Vienna`)
-  .then(console.log);
+void apiClient.get("/weather/current?location=Vienna").then((res) => {
+  console.log(res);
+});
 
 function App() {
   const [count, setCount] = useState(0);
