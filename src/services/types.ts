@@ -1,6 +1,6 @@
 export interface CurrentWeatherResponse {
   location: Location;
-  current: CurrentWeather;
+  current_weather: CurrentWeather;
 }
 
 export interface Location {

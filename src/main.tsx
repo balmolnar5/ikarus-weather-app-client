@@ -5,7 +5,7 @@ import App from "./App.tsx";
 
 import { Client as Styletron } from "styletron-engine-monolithic";
 import { Provider as StyletronProvider } from "styletron-react";
-import { LightTheme, BaseProvider } from "baseui";
+import { LightTheme, BaseProvider, styled } from "baseui";
 import { Provider as ReduxProvider } from "react-redux";
 import store from "./redux/store.ts";
 

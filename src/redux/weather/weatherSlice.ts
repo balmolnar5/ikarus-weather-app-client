@@ -1,16 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { weatherService } from "../../services/weatherService";
-import { CurrentWeather } from "../../services/types";
+import { CurrentWeatherResponse } from "../../services/types";
 
 interface WeatherState {
-  currentWeather: CurrentWeather | null;
+  currentWeatherResponse: CurrentWeatherResponse | null;
   savedLocations: string[];
   loading: boolean;
   error: string | null;
 }
 
 const initialState: WeatherState = {
-  currentWeather: null,
+  currentWeatherResponse: null,
   savedLocations: [],
   loading: false,
   error: null,
@@ -41,7 +41,7 @@ const weatherSlice = createSlice({
       })
       .addCase(fetchWeather.fulfilled, (state, action) => {
         state.loading = false;
-        state.currentWeather = action.payload.current;
+        state.currentWeatherResponse = action.payload;
       })
       .addCase(fetchWeather.rejected, (state, action) => {
         state.loading = false;
