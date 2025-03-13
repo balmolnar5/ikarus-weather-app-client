@@ -4,10 +4,11 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import axios from "axios";
 
+// TODO: remove this
+void axios.get("http://localhost:8000/api/weather/current?location=London").then(console.log);
+
 function App() {
   const [count, setCount] = useState(0);
-
-  axios.get("http://localhost:8000/api/weather/current?location=London").then(console.log);
 
   return (
     <>
@@ -21,7 +22,13 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+        <button
+          onClick={() => {
+            setCount((count) => count + 1);
+          }}
+        >
+          count is {count}
+        </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

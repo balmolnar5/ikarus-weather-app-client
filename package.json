@@ -8,7 +8,8 @@
     "dev": "vite",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
     "preview": "vite preview"
   },
   "engines": {
@@ -21,8 +22,11 @@
   },
   "dependencies": {
     "axios": "1.8.3",
+    "baseui": "0.0.0-next-2113e1821",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "styletron-engine-monolithic": "1.0.0",
+    "styletron-react": "6.1.1"
   },
   "devDependencies": {
     "@eslint/js": "9.22.0",
