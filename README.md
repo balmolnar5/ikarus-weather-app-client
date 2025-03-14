@@ -9,5 +9,5 @@ The front-end (React) of a simple weather app that fetches real-time weather dat
 Steps:
 
 1. Install `node@22.14.0` via a version manager (e.g., `nvm` or `volta`)
-1. Install the project dependencies (`npm ci`)
+1. Install the package dependencies (`npm ci`)
 1. Start the dev server: `npm run dev`:
