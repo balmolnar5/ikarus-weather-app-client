@@ -1,6 +1,5 @@
 import React from "react";
 import { HeadingSmall, ParagraphMedium } from "baseui/typography";
-import { Button } from "baseui/button";
 import { FlexGrid, FlexGridItem } from "baseui/flex-grid";
 import { CurrentWeatherResponse } from "../../services/types";
 import SimpleCard from "../common/SimpleCard";
@@ -11,11 +10,7 @@ interface WeatherCardProps {
   isSaved?: boolean;
 }
 
-const WeatherCard: React.FC<WeatherCardProps> = ({
-  currentWeatherResponse,
-  onSaveLocation,
-  isSaved,
-}) => {
+const WeatherCard: React.FC<WeatherCardProps> = ({ currentWeatherResponse }) => {
   console.log(currentWeatherResponse);
 
   const title = (
@@ -24,14 +19,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
     </HeadingSmall>
   );
 
-  const footer = onSaveLocation ? (
-    <Button onClick={onSaveLocation} disabled={isSaved}>
-      {isSaved ? "Location Saved" : "Save Location"}
-    </Button>
-  ) : null;
-
   return (
-    <SimpleCard title={title} footer={footer}>
+    <SimpleCard title={title}>
       <FlexGrid flexGridColumnCount={2}>
         <FlexGridItem>
           <img
