@@ -1,5 +1,3 @@
-// src/components/weather/WeatherCard.tsx
-
 import React from "react";
 import { HeadingSmall, ParagraphMedium } from "baseui/typography";
 import { Button } from "baseui/button";
